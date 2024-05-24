@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\input{../tex/format.tex}
+
+\newcommand{\Dr}[1]{Dr.~#1}
+\def\nespace{\hskip\fontdimen2\font\relax}
+\newcommand{\fy}[1]{(Fumeng: #1)}
+
+\begin{document}
+
+\makeheader
+\makefooter
+
+
+\mainfont\fontsize{9pt}{9pt}\selectfont
+
+\linespread{1.5} 
+\setlength{\parskip}{4pt}
+
+\vspace{1.75em}
+
+ \today
+ 
+ \vspace{1.75em}
+
+ \receipt{address line 1
+}{address line 2
+}{address line 3
+}{\vspace{-8pt}
+}{\vspace{-8pt}
+}%
+
+
+\vspace{2.2em}
+
+
+\fy{Above: If you don't want to look for the address, you can use vspace in the configuration file. Below: Sometimes the position and department names are different. } 
+
+Dear \Dr{Navy} and Members of the Search Committee,
+
+I am submitting my application for
+the tenure-track Assistant Professor position in the Department of Computer Science and Engneering at Blue University.
+My specialization aligns with 
+Blue's commitment to excellence in research and education,
+and I am confident that I will be a valuable addition to your institution.
+
+\fy{Below is the same paragraphs for your research, teaching, and future plans. }
+
+\lipsum[4-5]
+
+\fy{The next paragraph usually says why you want to apply to this position / school. }
+
+I apply to Blue University because I love ocean :-)
+
+\fy{A wrap-up paragraph. }
+
+\lipsum[6]
+
+
+
+
+
+
+
+
+
+
+
+
+
+\vspace{4em}
+
+Sincerely,
+\begin{figure*}[h]
+	\includegraphics[height=1cm]{../fig/sign.png}
+	\vspace*{-10pt}
+\end{figure*}
+
+\mynamePhD
+
+
+\end{document}
+

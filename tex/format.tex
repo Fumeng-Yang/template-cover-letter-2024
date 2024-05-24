@@ -1,0 +1,109 @@
+\usepackage{graphicx,xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{microtype}
+\usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage[letterpaper,top=.75in,bottom=.5in,left=1in,right=1in,footskip=.15in]{geometry}
+\usepackage{lipsum}
+
+\DeclareRobustCommand{\smseries}{\fontseries{sb}\selectfont}
+\DeclareRobustCommand{\ltseries}{\fontseries{l}\selectfont}
+\DeclareRobustCommand{\mdseries}{\fontseries{m}\selectfont}
+\DeclareTextFontCommand{\textsm}{\smseries}
+\DeclareTextFontCommand{\textlight}{\ltseries}
+\DeclareTextFontCommand{\textmi}{\smseries\itshape}
+
+\definecolor{hookcolor}{HTML}{3a84cf} % you can change this
+\definecolor{footergray}{HTML}{999999} 
+
+\usepackage{everypage}
+\usepackage{tikz}
+\AddEverypageHook{  
+\begin{tikzpicture}[remember picture,overlay]
+\fill[hookcolor,xshift=-30mm,yshift=-249mm](0,0) rectangle(7mm,5mm);
+\end{tikzpicture}
+}
+
+
+
+%--------------------------------------------------------------------------------
+% header 
+\usepackage{fancyhdr}
+\fancyhfoffset{0em}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhf{}
+\pagestyle{fancy}
+\newcommand{\dateseparator}{\raisebox{0pt}{\hspace{2.5pt}{\fontsize{6.5}{6.5}\selectfont{/}}\hspace{2pt}}} 
+
+
+\newcommand{\separator}{\hspace{3pt}\rule[-1pt]{.5pt}{7pt}\hspace{3pt}}
+ \newcommand{\receipt}[5]{
+ \begin{minipage}{\textwidth}
+  \setstretch{1.25} % you can change this
+	\setlength{\parskip}{0pt}
+	\mainfont\fontsize{8.75pt}{8.75pt}\selectfont % you can change this
+	{#1}\\
+	{#2}\\
+	{#3}\\
+	{#4}\\
+  {#5}
+\end{minipage}
+ }
+
+ \newcommand*{\fontdir}[1][../font/]{\def\@fontdir{#1}}
+ \fontdir
+ 
+\newfontfamily\mainfont[
+  Path=\@fontdir,
+  Extension = .ttf,
+  UprightFont= *-Regular,
+  ItalicFont= *-Italic,
+  BoldFont= *-Bold,
+  BoldSlantedFont = *-BoldItalic,
+  FontFace = {l}{n}{*-Light},
+  FontFace = {m}{n}{*-Medium},
+  FontFace = {m}{it}{*-MediumItalic},
+]{Roboto}[LetterSpace=.25]
+
+
+
+% *** change these ***
+\newcommand*{\footstylegray}[1]{{\mainfont\fontsize{7pt}{7pt}\selectfont\color{footergray}{#1}}}
+\newcommand*{\footstylepurple}[1]{{\mainfont\fontsize{7pt}{7pt}\selectfont\color{hookcolor}{#1}}}
+\newcommand*{\footstyle}[1]{{\fontsize{7pt}{7pt}\selectfont\color{footergray}{#1}}}
+\newcommand{\myname}[1]{{\selectfont\textcolor{hookcolor}{{First Last}}}}
+\newcommand{\mynamePhD}[1]{{\selectfont{{First Last, Ph.D.}}}} 
+\newcommand*{\makefooter}{%
+  \fancyfoot[L]{\setstretch{.75}\footstylepurple{First Last}\footstylegray{ \separator \href{www.firstlast.com}{www.firstlast.com} \separator firstlast@xyz.edu \separator 123-456-7890}}
+  \fancyfoot[C]{}
+  \fancyfoot[R]{}
+}
+% *** *** *** ***
+
+
+
+
+% the actually header
+\newcommand*{\makeheader}{%
+\vspace*{-12pt}
+\begin{minipage}{1.08\textwidth}
+% *** change these ***
+\hspace*{-1pt}\noindent\includegraphics{../fig/logo.pdf} 
+% *** *** *** ***
+\end{minipage}
+}
+%}
+
+
+% paragraph
+\parindent 0pt
+\linespread{1.5} % you can change this
+\setlength{\parskip}{4pt}
+\newcommand{\topicsep}{\vspace{3pt}} % you can change this
+% paragraph ends
+
+
+

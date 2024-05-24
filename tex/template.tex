@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+
+\input{../tex/format.tex}
+
+\newcommand{\Dr}[1]{Dr.~#1}
+\def\nespace{\hskip\fontdimen2\font\relax}
+\newcommand{\fy}[1]{(Fumeng: #1)}
+
+\begin{document}
+
+\makeheader
+\makefooter
+
+
+\mainfont\fontsize{9pt}{9pt}\selectfont
+
+\linespread{1.5} 
+\setlength{\parskip}{4pt}
+
+\vspace{1.75em}
+
+ \today
+ 
+ \vspace{1.75em}
+
+ \input{../tex/sameforall.tex}
+
+
+\vspace{4em}
+
+Sincerely,
+\begin{figure*}[h]
+	\includegraphics[height=1cm]{../fig/sign.png}
+	\vspace*{-10pt}
+\end{figure*}
+
+\mynamePhD
+
+
+\end{document}
+
