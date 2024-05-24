@@ -26,14 +26,14 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
     - `format.tex` This file defines the format. At the very least, you should change the `hookcolor` (around line 19) to your home school color, and change the name and contact (around line 73) to yours.
   
     - `sameforall.tex` As explained by its name, this file defines the share content of the main body (e.g., your degree, research, and teaching) with **customization** placeholders. 
-    -  **Customization** placeholders must use **a seperate line**, and with a format like `title-line%#title-line`. I talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content configuration files to generate a tex file for each school and compile it. 
+    -  **Customization** placeholders must use **a seperate line**, with a format like `title-line%#title-line`. I talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content configuration files to generate a tex file for each school and compile it. 
  
  -  The `school-customization` folder contains configuration files. If you need to add a school, copy and add a file like `new-school.tex`. 
     
     - Each school has its configuration file. Each configureation file gives information to fill in the placeholder. It must follow the format such that the Node.js file knows the mapping.
         > %---  
         title-line%#title-line    
-        ... % the actual content. 
+        ... 
     
     - If you don't need a customization, don't leave it blank or delete it. Put something like '\vspace' or '{}' there; otherwise, the script doesn't know what to do (I was a little lazy when writing the script).
   
@@ -52,11 +52,11 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
 
 If the command line does not terminate, something must be wrong. I admit that it is not easy to debug. 
 
-First, you should check if the Node.js file generats tex files in `letters`. 
+First, you should check if the Node.js file generates tex files in `letters`. 
 
-You then use a local editor (e.g., TexMaker or Texifier) to open and compile a tex file (e.g., `NEW-SCHOOL-letter.tex`) to diagnose the issues. 
+You then use a local editor (e.g., TexMaker) to open and compile a tex file (e.g., `NEW-SCHOOL-letter.tex`) to diagnose the issues. 
 
-You can also try to upload the tex file to overloaf if you don't want to have a local editor. But having a local editor was the only way to do this before overleaf/sharedlatex dominates.....
+You can also try to upload the tex file to overloaf if you don't want to have a local editor. But having a local editor was the only way to write LaTeX file before overleaf/sharedlatex dominates.....
 
 
 # Notes
