@@ -47,6 +47,8 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
         > ...   
         total : 3
     - Open `letters/pdfs`, you should see each school's PDF has its own file with appropriate customization.  
+
+- You can add a customization placeholder. But remember that to make sure the script can replaces the placeholder in the `sameforall.tex` with the specificaton in school configuration files, you need to add the same entry to ALL school files (even it's a `{}`)!  Otherwise, in the outputed PDF, it's still the placeholder. 
     
 # Debug
 
