@@ -5,7 +5,7 @@
 This is the LaTeX + Node.js/Python template I created for the cover letters of my faculty job applications in the 2023-24 cycle. 
 This framework is the best when you have dozens of similar letters with some customization for each, and you want to have multiple iterations. If you are not thinking about customization or you think you can have a final version soon, you don't need this framework.
 
-Basically, the code automatically generates PDF files for different positions based on the configuration files. You can then find them in `letters/pdfs`.
+Basically, the code automatically generates PDF files for different positions based on the configuration files. You can then find the final PDFs in `letters/pdfs`.
 
 My original code was written in Node.js, but thanks to GPT, I got a Python version in 5 seconds. :-) 
 
