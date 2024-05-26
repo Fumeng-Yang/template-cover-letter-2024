@@ -24,11 +24,11 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
     - `format.tex` This file defines the format. At the very least, you should change the `hookcolor` (around line 19) to your home school color, and change the name and contact (around line 73) to yours.
   
     - `sameforall.tex` As explained by its name, this file defines the share content of the main body (e.g., your degree, research, and teaching) with **customization** placeholders. 
-    -  **Customization** placeholders must use **a seperate line**, with a format like `title-line%#title-line`. I talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content configuration files to generate a tex file for each school and compile it. 
+    -  **Customization** placeholders must use **a seperate line**, with a format like `title-line%#title-line`. I talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content in the configuration files, generate a tex file for each school, and compile it. 
  
  -  The `school-customization` folder contains configuration files. If you need to add a school, copy and add a file like `new-school.tex`. 
     
-    - Each school has its configuration file. Each configureation file gives information to fill in the placeholder. It must follow the format such that the Node.js file knows the mapping.
+    - Each school has its own configuration file. Each configuration file gives information to fill in the placeholders. It must follow the following format so that the Node.js file knows the mapping.
         > %---  
         title-line%#title-line    
         ... 
