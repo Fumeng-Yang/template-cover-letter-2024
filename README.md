@@ -28,7 +28,7 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
  
  -  The `school-customization` folder contains configuration files. If you need to add a school, copy and add a file like `new-school.tex`. 
     
-    Each school has its own configuration file, which gives information to fill in the placeholders. The file must follow the following format so that the Node.js file knows the mapping.
+    Each school has its own configuration file, which gives information to fill in the placeholders. The file must follow the following format so that the Node.js file knows the mapping.   
         > %---  
         title-line%#title-line    
         ... 
