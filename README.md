@@ -24,16 +24,16 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
     - `format.tex` This file defines the format. At the very least, you should change the `hookcolor` (around line 19) to your home school color, and change the name and contact (around line 73) to yours.
   
     - `sameforall.tex` As explained by its name, this file defines the share content of the main body (e.g., your degree, research, and teaching) with **customization** placeholders. 
-    -  **Customization** placeholders must use **a seperate line**, with a format like `title-line%#title-line`. I talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content in the configuration files, generate a tex file for each school, and compile it. 
+    -  **Customization** placeholders must use **a seperate line**, with a format like `title-line%#title-line`. I will talk about how this works below. Roughly, the Node.js (`letters/generate-letters.js`) script will replace these placeholders with the content in the configuration files, generate a tex file for each school, and compile it. 
  
  -  The `school-customization` folder contains configuration files. If you need to add a school, copy and add a file like `new-school.tex`. 
     
-    - Each school has its own configuration file. Each configuration file gives information to fill in the placeholders. It must follow the following format so that the Node.js file knows the mapping.
+    Each school has its own configuration file, which gives information to fill in the placeholders. The file must follow the following format so that the Node.js file knows the mapping.
         > %---  
         title-line%#title-line    
         ... 
     
-    - If you don't need a customization, don't leave it blank or delete it. Put something like '\vspace' or '{}' there; otherwise, the script doesn't know what to do (I was a little lazy when writing the script).
+    - If you don't need a customization, don't leave it blank or delete it. Put something like `\vspace{-4pt}` or `{}` there; otherwise, the script doesn't split an entry properly (I was a little lazy when writing the script).
   
 
 - `letters/generate-letters.js` is where the magic happens.
@@ -46,11 +46,11 @@ You need either `Node.js` (https://nodejs.org/en) or Python 3.  I wrote the Node
         total : 3
     - Open `letters/pdfs`, you should see each school's PDF has its own file with appropriate customization.  
 
-- You can add a customization placeholder. But remember that to make sure the script can replaces the placeholder in the `sameforall.tex` with the specificaton in school configuration files, you need to add the same entry to ALL school files (even it's a `{}`)!  Otherwise, in the outputed PDF, it's still the placeholder. 
+- You can add a customization placeholder. But remember that to make sure the script replaces the placeholder in the `sameforall.tex` with the specification in school configuration files, you need to add the same entry to ALL school files (even it's a `{}`)!  Otherwise, the outputted PDF is still the placeholder. 
     
 # Debug
 
-If the command line does not terminate, something must be wrong. I admit that it is not easy to debug. 
+If the command line does not terminate, something is wrong. I admit that it is not easy to debug. 
 
 First, you should check if the Node.js file generates tex files in `letters`. 
 
